@@ -1,0 +1,168 @@
+@import './colors.scss';
+@import './spacings';
+@import './fonts';
+
+$nst-mapping: (
+  outline-color: $nst-blue-100,
+  // text
+  text-basic-color: $nst-blue-700,
+  // button
+  button-primary-background: $nst-blue-600,
+  button-primary-text-color: $nst-blue-100,
+  button-secondary-background: $nst-blue-100,
+  button-secondary-text-color: $nst-blue-600,
+  button-tertiary-background: $nst-grey-100,
+  button-tertiary-text-color: $nst-blue-600,
+  button-warning-background: $nst-yellow-200,
+  button-warning-text-color: $nst-orange-600,
+  button-danger-background: $nst-red-100,
+  button-danger-text-color: $nst-red-500,
+  button-large-height: 48px,
+  button-large-icon-size: 24px,
+  button-large-padding: $nst-space-1x-and-half $nst-space-3x,
+  button-large-font-size: 16px,
+  button-large-line-height: 24px,
+  button-medium-height: 40px,
+  button-medium-padding: $nst-space-1x-and-half $nst-space-2x,
+  button-medium-font-size: 14px,
+  button-medium-icon-size: 16px,
+  button-medium-line-height: 16px,
+  button-small-height: 32px,
+  button-small-padding: $nst-space-1x $nst-space-1x-and-half,
+  button-small-icon-size: 16px,
+  button-small-font-size: 12px,
+  button-small-line-height: 16px,
+  // alert
+  alert-info-background: $nst-blue-100,
+  alert-warning-background: $nst-yellow-100,
+  alert-danger-background: $nst-orange-100,
+  alert-success-background: $nst-green-100,
+  alert-neutral-background: $nst-grey-100,
+  alert-info-mobile-border-color: $nst-blue-300,
+  alert-warning-mobile-border-color: $nst-yellow-300,
+  alert-danger-mobile-border-color: $nst-red-300,
+  alert-success-mobile-border-color: $nst-green-300,
+  alert-neutral-mobile-border-color: $nst-grey-300,
+  alert-info-icon-color: $nst-blue-400,
+  alert-warning-icon-color: $nst-yellow-400,
+  alert-danger-icon-color: $nst-red-400,
+  alert-success-icon-color: $nst-green-400,
+  alert-neutral-icon-color: $nst-grey-400,
+  alert-info-text-color: $nst-blue-700,
+  alert-neutral-text-color: $nst-grey-700,
+  alert-warning-text-color: $nst-yellow-700,
+  alert-danger-text-color: $nst-red-700,
+  alert-success-text-color: $nst-green-700,
+  alert-info-close-icon-color: $nst-blue-600,
+  alert-warning-close-icon-color: $nst-yellow-600,
+  alert-danger-close-icon-color: $nst-red-600,
+  alert-success-close-icon-color: $nst-green-600,
+  alert-neutral-close-icon-color: $nst-grey-600,
+  alert-info-action-title-text-color: $nst-blue-700,
+  alert-warning-action-title-text-color: $nst-yellow-700,
+  alert-danger-action-title-text-color: $nst-red-700,
+  alert-success-action-title-text-color: $nst-green-700,
+  //Color Card
+  color-card-info-background: #{$nst-blue-100}80,
+  color-card-info-text-color: $nst-blue-600,
+  color-card-info-border-color: $nst-blue-200,
+  color-card-info-button-color: $nst-blue-500,
+  color-card-success-background: #{$nst-green-100}80,
+  color-card-success-text-color: $nst-green-600,
+  color-card-success-border-color: $nst-green-200,
+  color-card-success-button-color: $nst-green-500,
+  color-card-warning-background: $nst-yellow-100,
+  color-card-warning-text-color: $nst-yellow-600,
+  color-card-warning-border-color: $nst-yellow-200,
+  color-card-warning-button-color: $nst-yellow-500,
+  color-card-danger-background: #{$nst-red-100}80,
+  color-card-danger-text-color: $nst-red-600,
+  color-card-danger-border-color: $nst-red-200,
+  color-card-danger-button-color: $nst-red-500,
+  color-card-neutral-background: #{$nst-grey-100}80,
+  color-card-neutral-text-color: $nst-grey-600,
+  color-card-neutral-button-color: $nst-grey-500,
+  // history
+  history-info-background: $nst-blue-200,
+  history-warning-background: $nst-yellow-200,
+  history-danger-background: $nst-red-200,
+  history-success-background: $nst-green-200,
+
+  buttons: (
+    terminate: (
+      --background: $nst-red-100,
+      color: $nst-red-500,
+      --background-hover: $nst-white,
+      --background-hover-opacity: 0.6,
+      --color-: $nst-white
+    )
+  ),
+  h1: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 36px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 42px
+  ),
+  h2: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 32px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 36px
+  ),
+  h3: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 30px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 36px
+  ),
+  h4: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 24px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 32px
+  ),
+  h5: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 20px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 30px
+  ),
+  h6: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 16px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 26px,
+  ),
+  p1: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 16px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 400,
+    line-height: 28px,
+  ),
+  p2: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 12px,
+    color: $nst-grey-500,
+    font-weight: 400,
+    line-height: 22px
+  ),
+  credit-card-font: (
+    font-family: $nst-font-mono,
+    font-style: normal,
+    line-height: 24px
+  )
+);

@@ -1,0 +1,116 @@
+@import '../../../../public/style/all';
+
+nst-list-select-item {
+  justify-content: space-between;
+  background-color: $nst-grey-100;
+  padding: 14px 22px;
+  border-radius: $nst-border-radius-xs;
+  border: $nst-border-m solid $nst-grey-100;
+  outline: none;
+
+  &.disabled {
+    background-color: $nst-grey-100;
+    border: $nst-border-m solid $nst-grey-100;
+
+    .text {
+      color: $nst-grey-400;
+
+      .title {
+        color: $nst-grey-400;
+      }
+      .description {
+        color: $nst-grey-400;
+      }
+    }
+    .icon-wrapper {
+      .icon {
+        color: $nst-grey-400;
+      }
+    }
+  }
+  &:not(.disabled) {
+    cursor: pointer;
+
+    &.selected {
+      background-color: $nst-white;
+      border: $nst-border-m solid $nst-green-500;
+    }
+  }
+  &:not(.disabled):hover {
+    &:not(.selected) {
+      background-color: $nst-white;
+      border: $nst-border-m solid $nst-green-300;
+    }
+  }
+  &:not(.disabled):focus-visible {
+    &:not(.selected) {
+      background-color: $nst-white;
+      border: $nst-border-m solid $nst-green-300;
+    }
+  }
+  &:not(:last-of-type) {
+    margin-bottom: $nst-space-2x;
+  }
+  .icon-wrapper {
+    margin-right: $nst-space-2x;
+    padding-top: $nst-space-quarter;
+
+    .material-icons {
+      font-size: 20px;
+    }
+  }
+  .text {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.single-title {
+      margin-bottom: 22px;
+    }
+    &.has-icon{
+      margin-left: 0;
+    }
+    .title {
+      font-weight: 600;
+      font-size: $nst-font-size-m;
+      line-height: 26px;
+      color: $nst-grey-700;
+      padding: 0;
+      font-family: "inter-semibold";
+
+      @include onlyDevice(mobile) {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+    .description {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 22px;
+      color: $nst-grey-600;
+      margin-top: $nst-space-quarter;
+    }
+  }
+  .checkbox {
+    width: 16px;
+    padding-top: $nst-space-half;
+
+    &.single-title {
+      margin: auto;
+    }
+    nst-checkbox {
+      padding: 0;
+
+      .custom-checkbox {
+        &:not(.checked) {
+          background-color: $nst-white;
+        }
+      }
+    }
+  }
+  .chip {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "design-system",
+  "version": "0.0.1",
+  "description": "Napredne softverske tehnologije - design system",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "types": "./dist/types/components.d.ts",
+  "collection": "./dist/collection/collection-manifest.json",
+  "scripts": {
+    "build": "rm -f stencil/components.d.ts && stencil build && gulp stencil-copy",
+    "build:prod": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "generate": "stencil generate && node scripts/automated-stories.js",
+    "storybook": "start-storybook -s ./public -p 9001",
+    "build-storybook": "build-storybook -s ./public"
+  },
+  "dependencies": {
+    "@popperjs/core": "2.11.6",
+    "@stencil/core": "2.18.1",
+    "@stencil/sass": "1.5.2",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/web-components": "^6.5.12",
+    "@types/jest": "27.0.3",
+    "browserslist": "^4.21.4",
+    "caniuse-lite": "^1.0.30001423",
+    "firebase": "8.10.1",
+    "flatpickr": "4.6.13",
+    "gulp": "^4.0.2",
+    "jest": "27.0.3",
+    "jest-cli": "27.4.5",
+    "lit-html": "2.4.0",
+    "sass": "1.55.0",
+    "sass-loader": "13.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@types/react": "^18.0.35",
+    "babel-loader": "^8.2.5",
+    "puppeteer": "^18.2.1",
+    "webpack": "5.74.0"
+  },
+  "license": "MIT"
+}

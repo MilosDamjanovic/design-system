@@ -1,0 +1,179 @@
+@import '../../../public/style/spacings';
+@import '../../../public/style/fonts';
+@import '../../../public/style/font-size';
+@import '../../../public/style/mixins';
+@import '../../../public/style/variants';
+@import '../../../public/style/borders';
+@import '../../../public/style/shapes';
+
+@mixin nst-alert-theme() {
+  &.appearance-filled {
+    @each $status in nst-get-statuses() {
+      &.status-#{$status} {
+        @include onlyDevice(mobile) {
+          border-left: 6px solid nst-theme(alert-#{$status}-mobile-border-color);
+          border-radius: 0;
+        }
+        background-color: nst-theme(alert-#{$status}-background);
+        color: nst-theme(alert-#{$status}-text-color);
+        .icon {
+          color: nst-theme(alert-#{$status}-icon-color);
+        }
+        .icon-close {
+          color: nst-theme(alert-#{$status}-close-icon-color);
+        }
+        .alert-action-title {
+          color: nst-theme(alert-#{$status}-action-title-text-color);
+        }
+      }
+    }
+  }
+  &.appearance-outline {
+    @each $status in nst-get-statuses() {
+      &.status-#{$status} {
+        border-left: 4px solid nst-theme(alert-#{$status}-background);
+        @include onlyDevice(mobile) {
+          border-left-width: 6px;
+        }
+        color: nst-theme(alert-#{$status}-text-color);
+        .icon {
+          color: nst-theme(alert-#{$status}-icon-color);
+        }
+        .icon-close {
+          color: nst-theme(alert-#{$status}-close-icon-color);
+        }
+        .alert-action-title {
+          color: nst-theme(alert-#{$status}-action-title-text-color);
+        }
+      }
+    }
+  }
+}
+
+nst-alert {
+  @include nst-alert-theme();
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: $nst-border-radius-xs;
+  padding: $nst-space-half $nst-space-1x-and-half;
+  color: nst-theme(text-basic-color);
+  @include onlyDevice(mobile) {
+    padding: $nst-space-1x $nst-space-1x-and-half;
+  }
+
+  .alert-content {
+    .alert-icon-wrapper {
+      float: left;
+      padding-top: $nst-space-quarter;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.space-right {
+        margin-right: $nst-space-1x;
+      }
+      .icon {
+        font-size: 20px;
+      }
+    }
+    .alert-body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .alert-action-title {
+        margin-left: $nst-space-1x;
+        // We have to override yokoy link default styles
+        font-weight: bold !important;
+        font-family: 'inter-bold' !important;
+        font-size: 12px !important;
+        color: $nst-grey-700;
+        text-decoration: underline;
+        cursor: pointer;
+        line-height: 24px;
+
+        &.break-line {
+          margin-left: 0;
+        }
+      }
+      .title-wrapper {
+        display: flex;
+        align-items: center;
+        &.break-line {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      .alert-title {
+        font-family: $nst-font-bold;
+        white-space: pre-line;
+        line-height: 24px;
+        font-size: 12px;
+        margin-right: $nst-space-half;
+      }
+      .alert-description-wrapper {
+        display: flex;
+        align-items: center;
+      }
+      .alert-description {
+        font-family: $nst-font-regular;
+        white-space: pre-line;
+        font-size: 12px;
+        line-height: 24px;
+      }
+    }
+    .alert-slot * {
+      white-space: pre-line;
+    }
+  }
+
+  .alert-right {
+    position: absolute;
+    @include onlyDevice(mobile) {
+      top: $nst-space-1x-and-half;
+    }
+    top: $nst-space-1x;
+    right: $nst-space-1x;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    @include onlyDevice(mobile) {
+      align-items: flex-end;
+    }
+
+    .close-button {
+      display: flex;
+      margin-left: $nst-space-1x-and-half;
+    }
+
+    .expand-button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      .expand-text {
+        font-size: 12px;
+        margin-right: $nst-space-1x;
+        white-space: nowrap;
+      }
+      .icon-expand {
+        font-size: $nst-font-size-m;
+      }
+    }
+
+    .icon-close {
+      cursor: pointer;
+      font-size: $nst-font-size-m;
+      height: $nst-font-size-m;
+    }
+  }
+}
+
+nst-alert.collapsed {
+  .alert-description,
+  .alert-slot {
+    display: none;
+  }
+  .icon-expand {
+    transform: rotate(180deg);
+  }
+}

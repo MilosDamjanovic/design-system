@@ -1,0 +1,80 @@
+@import '../../../public/global-style/form-input';
+
+ nst-textarea {
+  ::-webkit-input-placeholder {
+    color:  $nst-grey-500;
+  }
+  :-moz-placeholder {
+    color:  $nst-grey-500;
+  }
+  ::-moz-placeholder {
+    color:  $nst-grey-500;
+  }
+  :-ms-input-placeholder {
+    color:  $nst-grey-500;
+  }
+  width: 100%;
+  &.nst-form-input .form-input {
+    height: auto;
+  }
+  &.nst-form-input textarea {
+    padding:  $nst-space-1x;
+  }
+
+  &.nst-form-input .message {
+    margin-left: 0;
+    margin-top:  $nst-space-1x;
+  }
+
+  &.nst-form-input div.icon-left {
+    span.icon-left {
+      left:  $nst-space-2x;
+      top:  $nst-space-2x;
+      color:  $nst-grey-700;
+    }
+    textarea {
+      padding-left:  $nst-space-4x +  $nst-space-1x;
+    }
+  }
+
+  &.nst-form-input div.icon-left {
+    &.inline {
+      span.icon-left {
+        left:  $nst-space-1x;
+        top:  $nst-space-1x-and-half;
+      }
+      textarea {
+        padding-left:  $nst-space-4x;
+      }
+    }
+  }
+
+  &.nst-form-input textarea {
+    font-family: inherit;
+    width: 100%;
+    min-height: 64px;
+    font-size: 14px;
+    line-height: 16px;
+    padding:  $nst-space-2x;
+    &.inline {
+      min-height: 56px;
+      line-height: 16px;
+      padding:  $nst-space-1x;
+    }
+  }
+
+  &.nst-form-input label {
+    color:  $nst-grey-700;
+    margin-bottom:  $nst-space-1x;
+  }
+
+  &.inline-textarea {
+    label {
+      color:  $nst-grey-400;
+      margin-left:  $nst-space-1x;
+    }
+    .message {
+      margin-left:  $nst-space-1x;
+    }
+  }
+}

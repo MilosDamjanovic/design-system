@@ -1,0 +1,75 @@
+@import './colors.scss';
+@import './spacings';
+@import './fonts';
+
+$nst-mapping-mobile: (
+  h1: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 28px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 34px
+  ),
+  h2: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 26px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 32px
+  ),
+  h3: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 24px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 30px
+  ),
+  h4: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 20px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 30px
+  ),
+  h5: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 18px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 24px
+  ),
+  h6: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 14px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 600,
+    line-height: 24px
+  ),
+  p1: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 14px,
+    color: $nst-grey-700,
+    font-style: normal,
+    font-weight: 400,
+    line-height: 24px
+  ),
+  p2: (
+    font-family: 'Inter, Helvetica, Arial, sans-serif',
+    font-size: 12px,
+    color: $nst-grey-500,
+    font-style: normal,
+    font-weight: 400,
+    line-height: 22px
+  ),
+  credit-card-font: (
+    font-family: $nst-font-mono,
+    font-style: normal,
+    line-height: 24px
+  )
+);

@@ -1,0 +1,241 @@
+@import '../style/all';
+
+.nst-form-input {
+  .nst-split-input {
+    display: flex;
+    align-items: center;
+    border: $nst-border-s solid $nst-grey-100;
+    background-color: $nst-grey-100;
+    border-radius: $nst-border-radius-xs;
+    width: 100%;
+    @include nst-component-animation(box-shadow, border, background-color);
+    & > nst-select {
+      width: unset;
+      display: block;
+      flex: unset;
+      label {
+        display: none;
+      }
+      &.nst-form-input div.icon-right .form-input {
+        padding-right: $nst-space-4x + $nst-space-half;
+      }
+      .options-scrollable-menu {
+        label {
+          display: block;
+        }
+      }
+    }
+    .nst-form-input:first-child {
+      .form-input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    .nst-form-input:nth-child(2) {
+      .form-input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+    & > nst-select {
+      &.dropdown-open {
+        .form-input {
+          box-shadow: none;
+          border: none;
+          &:hover,
+          &:focus {
+            box-shadow: none;
+            border: none;
+          }
+        }
+      }
+      .form-input {
+        border: none;
+        display: flex;
+        align-items: center;
+        height: 46px;
+        background-color: $nst-grey-100;
+        &:hover,
+        &:focus {
+          box-shadow: none;
+          border: none;
+        }
+      }
+      .message {
+        display: none;
+      }
+      .telephone-item {
+        pointer-events: none;
+      }
+    }
+    & > nst-input {
+      width: 100%;
+      .form-input {
+        border: none;
+        height: 46px;
+
+        &:hover,
+        &:focus {
+          box-shadow: none;
+          border: none;
+        }
+      }
+      .message {
+        display: none;
+      }
+    }
+    &.size-small {
+      .form-input {
+        height: 38px;
+      }
+      &.inline {
+        .form-input {
+          height: 30px;
+        }
+      }
+    }
+    &:hover {
+      border: $nst-border-s solid $nst-grey-100;
+      background-color: $nst-grey-100;
+      @include nst-outline(4px, $nst-blue-100);
+      nst-select,
+      nst-input {
+        .form-input {
+          background-color: $nst-white;
+        }
+      }
+    }
+    &:focus-within {
+      @include nst-outline(4px, $nst-blue-100);
+      border: $nst-border-s solid $nst-blue-300;
+      background-color: $nst-white;
+      .form-input {
+        &:not(:focus) {
+          background-color: $nst-blue-100;
+        }
+      }
+      & > nst-select,
+      & > nst-input {
+        .form-input {
+          background-color: $nst-white;
+        }
+      }
+    }
+    &.error {
+      border: $nst-border-s solid $nst-orange-100;
+      background-color: $nst-orange-100;
+      nst-select,
+      nst-input {
+        .form-input {
+          background-color: $nst-orange-100;
+        }
+      }
+      &:hover {
+        border: $nst-border-s solid $nst-grey-100;
+        background-color: $nst-white;
+        @include nst-outline(4px, $nst-orange-100);
+        nst-select,
+        nst-input {
+          .form-input {
+            background-color: $nst-white;
+          }
+        }
+      }
+      &:focus-within {
+        @include nst-outline(4px, $nst-orange-100);
+        border: $nst-border-s solid $nst-red-300;
+        background-color: $nst-white;
+        .form-input {
+          &:not(:focus) {
+            background-color: $nst-orange-100;
+          }
+        }
+        & > nst-select,
+        & > nst-input {
+          .form-input {
+            background-color: $nst-white;
+          }
+        }
+      }
+    }
+    &.inline {
+      border: $nst-border-s solid $nst-white;
+      background-color: $nst-white;
+      & > nst-select,
+      & > nst-input {
+        .form-input {
+          background-color: $nst-white;
+          height: 38px;
+        }
+      }
+      &:hover {
+        border: $nst-border-s solid $nst-grey-100;
+        @include nst-outline(0, $nst-grey-100);
+        background-color: $nst-grey-100;
+
+        & > nst-select,
+        & > nst-input {
+          .form-input {
+            background-color: $nst-grey-100;
+          }
+        }
+      }
+      &:focus-within {
+        @include nst-outline(4px, $nst-blue-100);
+        border: $nst-border-s solid $nst-blue-300;
+        background-color: $nst-white;
+        .form-input {
+          &:not(:focus) {
+            background-color: $nst-blue-100;
+          }
+        }
+        & > nst-select,
+        & > nst-input {
+          .form-input {
+            background-color: $nst-white;
+          }
+        }
+      }
+      &.error {
+        border: $nst-border-s solid $nst-orange-100;
+        background-color: $nst-orange-100;
+        & > nst-select,
+        & > nst-input {
+          .form-input {
+            background-color: $nst-orange-100;
+          }
+        }
+        &:hover {
+          border: $nst-border-s solid $nst-grey-100;
+          @include nst-outline(4px, $nst-orange-100);
+          nst-select,
+          nst-input {
+            .form-input {
+              background-color: $nst-white;
+            }
+          }
+        }
+        &:focus-within {
+          @include nst-outline(4px, $nst-orange-100);
+          border: $nst-border-s solid $nst-red-300;
+          background-color: $nst-white;
+          .form-input {
+            &:not(:focus) {
+              background-color: $nst-orange-100;
+            }
+          }
+          & > nst-select,
+          & > nst-input {
+            .form-input {
+              background-color: $nst-white;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}

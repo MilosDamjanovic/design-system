@@ -1,0 +1,73 @@
+@import '../../../public/global-style/form-input';
+@import '../../../public/style/colors';
+@import '../../../public/style/spacings';
+@import '../../../public/style/mixins';
+
+.tooltip-icon {
+  display: flex;
+  span {
+    color: #1C1B1F;
+    font-size: 12px !important;
+    margin-left: $nst-space-1x;
+    margin-bottom: $nst-space-1x;
+  }
+}
+
+.nst-form-input.nst-select {
+  cursor: pointer;
+  &.disabled {
+    .form-input {
+      pointer-events: none;
+    }
+  }
+  .nst-input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .dropdown-icon {
+      transition: transform 150ms ease;
+    }
+
+    .form-input {
+      overflow: hidden;
+      white-space: nowrap;
+      padding-right: 24px;
+      text-overflow: ellipsis;
+      .label-with-icon {
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        .label-wrapper {
+          line-height: 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .icon-wrapper {
+          font-size: 16px;
+          height: 16px;
+          margin-right: $nst-space-half;
+          .material-icons {
+            font-size: 16px;
+          }
+        }
+      }
+      &.empty-input {
+        color: $nst-grey-500;
+      }
+    }
+  }
+  &.dropdown-open {
+    .form-input {
+      outline: none;
+      background-color: $nst-white;
+      border: 1px solid $nst-blue-300;
+      @include nst-outline(4px, $nst-blue-100);
+      &:hover {
+        border: 1px solid $nst-blue-300;
+      }
+    }
+    .dropdown-icon {
+      transform: rotate(-180deg);
+    }
+  }
+}

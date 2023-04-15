@@ -1,0 +1,179 @@
+@import '../../../public/style/all.scss';
+
+ nst-slide-toggle {
+  display: inline-flex;
+  outline: none;
+  .toggle {
+    @include  nst-component-animation(background-color, border, box-shadow);
+  }
+
+  .toggle-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+  }
+
+  &.size-large {
+    .toggle-label {
+      height: unset;
+    }
+    .toggle {
+      height: 31px;
+      width: 51px;
+      border-width:  $nst-border-l;
+      &.checked .toggle-switcher {
+        left: calc(100% - 26px);
+      }
+    }
+    .toggle-switcher {
+      height: 25px;
+      width: 25px;
+    }
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline-flex;
+    box-sizing: border-box;
+    height: 24px;
+    width: 44px;
+    min-width: 44px;
+    border-width:  $nst-border-m;
+    border-style: solid;
+    border-radius:  $nst-border-radius-l;
+    cursor: pointer;
+    background-color:  $nst-grey-200;
+    border-color:  $nst-grey-200;
+    @include  nst-component-animation(all);
+    &.checked {
+      background-color:  $nst-green-500;
+      border-color:  $nst-green-500;
+    }
+    &.checked .toggle-switcher {
+      background-color:  $nst-white;
+      left: calc(100% - 20px);
+    }
+  }
+  
+  .toggle-switcher {
+    @include  nst-component-animation(all);
+    position: absolute;
+    border-radius:  $nst-border-radius-xl;
+    width: 20px;
+    height: 20px;
+    background-color:  $nst-white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .native-input:disabled + .toggle {
+    cursor: default;
+  }
+
+  .native-input:enabled:focus + .toggle {
+    @include  nst-outline(3px,  $nst-blue-100);
+  }
+
+  .text {
+    font-size:  $nst-font-size-m;
+    font-weight: 400;
+    line-height: 28px;
+    color:  $nst-grey-700;
+    margin-left:  $nst-space-1x-and-half;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  .native-input:enabled + .toggle:hover {
+    background-color:  $nst-grey-300;
+    border-color:  $nst-grey-300;
+
+    &.checked {
+      background-color:  $nst-green-600;
+      border-color:  $nst-green-600;
+    }
+  }
+
+  .native-input:enabled {
+    &:focus + .toggle {
+      background-color:  $nst-grey-200;
+      border-color:  $nst-grey-200;
+
+      &.checked {
+        background-color:  $nst-green-500;
+        border-color:  $nst-green-500;
+      }
+    }
+
+    &:active + .toggle {
+      background-color:  $nst-grey-200;
+      border-color:  $nst-grey-200;
+
+      &.checked {
+        background-color:  $nst-green-500;
+        border-color:  $nst-green-500;
+      }
+    }
+  }
+
+  .native-input:enabled:focus + .toggle {
+    @include  nst-outline(3px,  $nst-blue-100);
+  }
+
+  .native-input:disabled {
+    & + .toggle {
+      opacity: .3;
+      background-color:  $nst-grey-200;
+      border-color:  $nst-grey-200;
+
+      &.checked {
+        background-color:  $nst-green-500;
+        border-color:  $nst-green-500;
+      }
+
+      .toggle-switcher {
+        background-color:  $nst-white;
+      }
+    }
+  }
+
+  .description-wrap {
+    display: flex;
+
+    .icon {
+      display: flex;
+      margin: auto;
+      color:  $nst-blue-500;
+    }
+
+    .heading-description-wrap {
+
+      &.hide {
+        display: none;
+      }
+
+      @include excludeDevice(mobile) {
+        width: 220px;
+      }
+      padding: 0  $nst-space-1x-and-half;
+
+      .heading {
+        font-size: 14px;
+        line-height: 24px;
+        color:  $nst-grey-700;
+      }
+
+      .description {
+        font-size: 12px;
+        line-height: 22px;
+        color:  $nst-grey-500;
+      }
+    }
+  }
+}

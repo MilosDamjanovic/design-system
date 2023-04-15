@@ -1,0 +1,110 @@
+@import '../../../public/style/all';
+
+@function get-nst-button-statuses() {
+  @return 'primary', 'secondary', 'tertiary', 'warning', 'danger';
+}
+
+@mixin nst-button-theme() {
+  @each $size in nst-get-sizes() {
+    &.size-#{$size} {
+      button {
+        font-size: nst-theme(button-#{$size}-font-size);
+        line-height: nst-theme(button-#{$size}-line-height);
+        padding: nst-theme(button-#{$size}-padding);
+        .material-icons {
+          font-size: nst-theme(button-#{$size}-icon-size);
+        }
+      }
+    }
+  }
+  &.appearance-filled {
+    @each $status in get-nst-button-statuses() {
+      &.status-#{$status} {
+        button {
+          border: none;
+          color: nst-theme(button-#{$status}-text-color);
+          background-color: nst-theme(button-#{$status}-background);
+          .material-icons {
+            color: nst-theme(button-#{$status}-icon-color);
+          }
+        }
+      }
+    }
+  }
+  &.appearance-outline {
+    button {
+      color: $nst-grey-600;
+      border: 1px solid $nst-grey-300;
+      background: none;
+      .material-icons {
+        color: $nst-grey-600;
+      }
+    }
+  }
+  &.appearance-ghost {
+    &.status-danger {
+      button {
+        color: nst-theme(button-danger-text-color);
+
+        .material-icons {
+          color: nst-theme(button-danger-icon-color);
+        }
+      }
+    }
+
+    button {
+      color: $nst-blue-600;
+      border: none;
+      background: none;
+      .material-icons {
+        color: $nst-blue-600;
+      }
+    }
+
+    &.no-padding {
+      button {
+        padding: 0;
+      }
+    }
+  }
+}
+
+nst-button {
+  outline: none;
+  border: none;
+  display: inline-block;
+  align-items: center;
+  &.full-width {
+    width: 100%;
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  .left-icon {
+    margin-right: $nst-space-1x;
+  }
+  .right-icon {
+    margin-left: $nst-space-1x;
+  }
+  @include nst-button-theme();
+  button {
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      opacity: 0.9;
+    }
+    &:active {
+      opacity: 0.8;
+    }
+    &:focus {
+      opacity: 0.9;
+      outline: none;
+    }
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+}

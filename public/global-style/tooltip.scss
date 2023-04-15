@@ -1,0 +1,61 @@
+@import '../style/all';
+
+[data-tooltip] {
+  position: relative;
+  &::before {
+    content: attr(data-tooltip);
+    z-index: 999999;
+    padding: $nst-space-half $nst-space-1x-and-half;
+    font-size: 12px;
+    position: absolute;
+    background: rgba($color: $nst-grey-700, $alpha: 0.98);
+    color: $nst-white;
+    border-radius: $nst-border-radius-xs;
+    opacity: 0;
+    transition: 0.3s;
+    transform: translate3d(-50%, -100%, 0) scale(0);
+    transform-origin: bottom;
+    pointer-events: none;
+    box-shadow: 0 0 0.5px $nst-grey-100;
+    left: 50%;
+  }
+  &:hover::before, &:active::before {
+    opacity: 1;
+    transform: translate3d(-50%, calc(-100% - #{$nst-space-half}), 0) scale(1);
+  }
+
+  &[data-tooltip-position='bottom'] {
+    &::before {
+      top: 100%;
+      transform: translate3d(-50%, 0, 0) scale(0);
+      transform-origin: top;
+    }
+    &:hover::before, &:active::before {
+      transform: translate3d(-50%, #{$nst-space-half}, 0) scale(1);
+    }
+  }
+
+  &[data-tooltip-position='right'] {
+    &::before {
+      top: 50%;
+      left: 100%;
+      transform: translate3d(0, -50%, 0) scale(0);
+      transform-origin: left;
+    }
+    &:hover::before, &:active::before {
+      transform: translate3d(#{$nst-space-half}, -50%, 0) scale(1);
+    }
+  }
+
+  &[data-tooltip-position='left'] {
+    &::before {
+      top: 50%;
+      left: 0;
+      transform: translate3d(-100%, -50%, 0) scale(0);
+      transform-origin: right;
+    }
+    &:hover::before, &:active::before {
+      transform: translate3d(calc(-100% - #{$nst-space-half}), -50%, 0) scale(1);
+    }
+  }
+}

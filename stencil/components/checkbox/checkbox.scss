@@ -1,0 +1,137 @@
+@import '../../../public/style/all.scss';
+
+nst-checkbox {
+  @include user-select(none);
+  padding: $nst-space-2x 0;
+  display: flex;
+  .label {
+    position: relative;
+    display: inline-flex;
+    align-items: start;
+    margin: 0;
+    min-height: inherit;
+    cursor: pointer;
+  }
+
+  .custom-checkbox {
+    @include nst-component-animation(background-color, border, box-shadow);
+    flex-shrink: 0;
+    border-radius: $nst-border-radius-xxs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border-style: solid;
+    border-width: $nst-border-s;
+    position: relative;
+    background-color: $nst-white;
+    border-color: $nst-grey-200;
+    &.disabled {
+      background-color: $nst-white;
+      border-color: $nst-grey-200;
+    }
+    &:not(.disabled):hover {
+      &:not(.checked) {
+        background-color: $nst-white;
+        border-color: $nst-grey-200;
+      }
+    }
+  }
+
+  .material-icons {
+    font-size: $nst-font-size-m;
+  }
+
+  .text {
+    @include nst-component-animation(color);
+    margin-left: $nst-space-1x;
+  }
+
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  .native-input {
+    border: none;
+  }
+
+  .native-input:focus:not(:checked) + .custom-checkbox {
+    $inset-shadow: 0 0 0 100vmax;
+    @include nst-outline(3px, $nst-blue-300);
+  }
+  .native-input:focus:checked + .custom-checkbox {
+    @include nst-outline(3px, $nst-blue-300);
+  }
+
+  .text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+    color: $nst-grey-700;
+  }
+
+  .native-input:enabled:focus + .custom-checkbox {
+    border-color: $nst-blue-300;
+    background-color: $nst-white;
+    &.indeterminate,
+    &.checked {
+      border-color: $nst-green-500;
+      background-color: $nst-green-500;
+    }
+  }
+
+  .custom-checkbox.checked {
+    background-color: $nst-green-500;
+    border-color: $nst-green-500;
+    &:focus {
+      border-color: $nst-green-500;
+    }
+    .material-icons {
+      color: $nst-white;
+    }
+  }
+
+  .custom-checkbox.indeterminate {
+    background-color: $nst-green-500;
+    border-color: $nst-green-500;
+
+    .material-icons {
+      color: $nst-white;
+    }
+  }
+
+  .custom-checkbox:not(.disabled):hover {
+    background-color: $nst-white;
+    @include nst-outline(3px, $nst-blue-100);
+    &.indeterminate,
+    &.checked {
+      background-color: $nst-green-600;
+      border-color: $nst-green-600;
+    }
+  }
+
+  .native-input:enabled:active + .custom-checkbox {
+    background-color: $nst-green-500;
+    &.indeterminate,
+    &.checked {
+      background-color: $nst-green-500;
+    }
+  }
+
+  .native-input:disabled {
+    & + .custom-checkbox {
+      opacity: 0.3;
+    }
+    &:indeterminate + .custom-checkbox,
+    &:checked + .custom-checkbox {
+      opacity: 0.3;
+    }
+  }
+}

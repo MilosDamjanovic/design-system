@@ -1,0 +1,10 @@
+@import './mapping.scss';
+@import './mapping-mobile.scss';
+
+@function nst-theme($keys...) {
+  @return map-get($nst-mapping, $keys...);
+}
+
+@function nst-theme-mobile($keys...) {
+  @return map-get($nst-mapping-mobile, $keys...);
+}

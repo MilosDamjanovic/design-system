@@ -1,0 +1,73 @@
+@import '../../../public/style/spacings';
+@import '../../../public/style/colors';
+@import '../../../public/style/shapes';
+
+$element-height: 8px;
+
+.component {
+  color:  $nst-grey-600;
+
+  .progress-bar-item-container {
+    display: flex;
+    gap:  $nst-space-4x;
+    position: absolute;
+
+    .dot {
+      height: $element-height;
+      width: $element-height;
+      border-radius:  $nst-border-radius-xl;
+      display: inline-block;
+    }
+
+    .title-container {
+      padding-bottom:  $nst-space-1x;
+      line-height: 10px;
+
+      .title {
+        padding-left:  $nst-space-half;
+      }
+
+      .title, .total-amount-title {
+        font-size: 10px;
+      }
+    }
+
+    .value {
+      padding-left:  $nst-space-1x-and-half;
+    }
+
+    .value, .total-amount-value {
+      font-size: 12px;
+    }
+
+  }
+
+  .subtitle {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    color:  $nst-grey-500;
+    font-size: 10px;
+  }
+
+  .subtitle-top {
+    padding-top:  $nst-space-2x;
+  }
+
+  .subtitle-bottom {
+    padding-bottom:  $nst-space-2x;
+  }
+
+  .progress-bar {
+    height: $element-height;
+    position: relative;
+    padding-bottom:  $nst-space-1x-and-half;
+    padding-top:  $nst-space-1x-and-half;
+
+    .bar {
+      width: 100px;
+      height: $element-height;
+      position: absolute;
+    }
+  }
+}

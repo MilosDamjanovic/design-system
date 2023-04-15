@@ -1,0 +1,123 @@
+@import './colors.scss';
+@import './theme';
+
+@mixin nst-component-animation($properties...) {
+  transition-duration: 0.15s;
+  transition-property: $properties;
+  transition-timing-function: ease-in;
+}
+
+@mixin nst-outline($outline-width, $outline-color, $options: (inset-shadow: false)) {
+  $outset-shadow: 0 0 0 $outline-width $outline-color;
+  box-shadow: $outset-shadow;
+
+  @if (map-get($options, 'inset-shadow')) {
+    &:not(:hover):not(:active) {
+      box-shadow: $outset-shadow, inset 0 0 0 100vmax nst-theme(outline-color);
+    }
+  }
+}
+
+@mixin onlyDevice($device) {
+  @if $device == mobile {
+    @media only screen and (max-width: '767px') {
+      @content;
+    }
+  }
+
+  @if $device == tablet {
+    @media only screen and (min-width: '768px') and (max-width: '1199px') {
+      @content;
+    }
+  }
+
+  @if $device == desktop {
+    @media only screen and (min-width: '1200px') {
+      @content;
+    }
+  }
+}
+
+@mixin excludeDevice($device) {
+  @if $device == mobile {
+    @media only screen and (min-width: '768px') {
+      @content;
+    }
+  }
+
+  @if $device == desktop {
+    @media only screen and (max-width: '1199px') {
+      @content;
+    }
+  }
+}
+
+@mixin transform($val) {
+  -webkit-transform: #{$val};
+  -moz-transform: #{$val};
+  -ms-transform: #{$val};
+  -o-transform: #{$val};
+  transform: #{$val};
+}
+
+@mixin transition($val) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val;
+  -o-transition: $val;
+  transition: $val;
+}
+
+@mixin user-select($val) {
+  -webkit-user-select: $val;
+  -moz-user-select: $val;
+  -ms-user-select: $val;
+  user-select: $val;
+}
+
+@mixin placeholder-color($color) {
+  &::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+  ::-webkit-input-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+}
+
+@mixin nst-set-styles($keys...) {
+  @each $key, $value in nst-theme($keys...) {
+    #{$key}: #{$value}
+  }
+}
+
+@mixin nst-set-styles-mobile($keys...) {
+  @each $key, $value in nst-theme-mobile($keys...) {
+    #{$key}: #{$value}
+  }
+}
+
+@mixin material-icon($icon-name, $icon-color, $bg-color) {
+  &::after {
+    font-family: 'Material Icons';
+    content: $icon-name;
+    color: $icon-color;
+    background-color: $bg-color;
+    font-size: 12px;
+    position: relative;
+    top: -$nst-space-1x-and-half;
+    right: $nst-space-1x-and-half / 2;
+    -webkit-font-feature-settings: 'liga' 1;
+    -moz-font-feature-settings: 'liga' 1;
+    font-feature-settings: 'liga' 1;
+    padding: $nst-space-quarter;
+    border-radius: 100%;
+  }
+}

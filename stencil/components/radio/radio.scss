@@ -1,0 +1,84 @@
+@import '../../../public/style/borders';
+@import '../../../public/style/colors';
+@import '../../../public/style/spacings';
+@import '../../../public/style/shapes';
+@import '../../../public/style/mixins';
+
+nst-radio-group {
+  display: block;
+}
+
+nst-radio {
+  display: block;
+  position: relative;
+  @include user-select(none);
+
+  .outer-circle,
+  .inner-circle {
+    border-radius: $nst-border-radius-xl;
+    box-sizing: border-box;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+
+  .outer-circle {
+    height: 16px;
+    width: 16px;
+    left: 0;
+    border-style: solid;
+    border-width: $nst-border-s;
+    border-color: $nst-grey-200
+  }
+
+  .inner-circle {
+    width: 8px;
+    height: 8px;
+    left: 4px;
+  }
+
+  .text {
+    font-size: 14px;
+    color: $nst-grey-700;
+    margin: $nst-space-1x 0 $nst-space-1x $nst-space-3x;
+  }
+
+  label {
+    display: inline-flex;
+    cursor: pointer;
+    margin: 0;
+    min-height: inherit;
+    align-items: center;
+
+    &:hover {
+      .outer-circle {
+        @include nst-outline(4px, $nst-blue-100);
+      }
+    }
+  }
+
+  .native-input{
+    &:checked {
+      ~ .outer-circle {border-color: $nst-green-500;}
+      ~ .inner-circle {background-color: $nst-green-500;}
+    }
+
+    &:focus {
+      ~ .outer-circle {
+        @include nst-outline(4px, $nst-blue-100);
+      }
+    }
+
+    &:disabled {
+      ~ .outer-circle, ~ .inner-circle, ~ .text {
+        opacity: 0.3;
+        box-shadow: none;
+        cursor: initial;
+      }
+    }
+  }
+
+  .visually-hidden {
+    display: none;
+  }
+}

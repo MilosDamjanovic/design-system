@@ -1,0 +1,19 @@
+ion-modal.mobile-dialog {
+  --border-radius: 16px;
+  &::part(handle) {
+    display: none;
+  }
+  &.ion-modal-fullscreen {
+    --height: calc(100% - (var(--ion-safe-area-top)));
+    --border-radius: 0;
+  }
+  &.ion-modal-minimal {
+    --height: auto;
+    >* {
+        padding: 30px 24px 20px;
+    }
+  }
+  &.ion-modal-shadow {
+    --box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.08);
+  }
+}

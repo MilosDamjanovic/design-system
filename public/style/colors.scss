@@ -1,0 +1,89 @@
+$nst-black: #000000;
+$nst-white: #ffffff;
+
+$nst-blue-700: #0e0c2f;
+$nst-blue-600: #142b63;
+$nst-blue-500: #416096;
+$nst-blue-400: #679abe;
+$nst-blue-300: #91b5d2;
+$nst-blue-200: #bcd2e4;
+$nst-blue-100: #e8eff6;
+
+$nst-green-700: #1a373b;
+$nst-green-600: #2d5c56;
+$nst-green-500: #41726a;
+$nst-green-400: #5a9873;
+$nst-green-300: #88b69c;
+$nst-green-200: #c0dac8;
+$nst-green-100: #e6f0eb;
+
+$nst-orange-700: #592135;
+$nst-orange-600: #8f3d41;
+$nst-orange-500: #be665b;
+$nst-orange-400: #ea9b7d;
+$nst-orange-300: #f2baa3;
+$nst-orange-200: #f8d8ca;
+$nst-orange-100: #fff4ee;
+
+$nst-yellow-700: #331d02;
+$nst-yellow-600: #774810;
+$nst-yellow-500: #bb752c;
+$nst-yellow-400: #efa455;
+$nst-yellow-300: #f5c083;
+$nst-yellow-200: #fae2c4;
+$nst-yellow-100: #fef3e4;
+
+$nst-grey-700: #232123;
+$nst-grey-600: #524e51;
+$nst-grey-500: #807b7f;
+$nst-grey-400: #aea8ac;
+$nst-grey-300: #c6c0c4;
+$nst-grey-200: #ddd8db;
+$nst-grey-100: #f3f2f3;
+
+$nst-red-700: #330000;
+$nst-red-600: #770700;
+$nst-red-500: #bb2412;
+$nst-red-400: #fd5039;
+$nst-red-300: #ff745a;
+$nst-red-200: #ffa491;
+$nst-red-100: #ffddd9;
+
+$nst-dark-color: #222428;
+$nst-dark-color-shade: #1e2023;
+$nst-dark-color-tint: #383a3e;
+
+$nst-primary-color: $nst-blue-600;
+$nst-secondary-color: $nst-green-400;
+$nst-tertiary-color: $nst-orange-400;
+$nst-danger-color: $nst-red-300;
+$nst-warning-color: $nst-yellow-300;
+$nst-success-color: $nst-green-300;
+$nst-info-color: $nst-blue-600;
+
+$nst-primary-bg-color: mix(#fff, $nst-primary-color, 90%);
+$nst-secondary-bg-color: mix(#fff, $nst-secondary-color, 90%);
+$nst-tertiary-bg-color: mix(#fff, $nst-tertiary-color, 90%);
+$nst-danger-bg-color: mix(#fff, $nst-danger-color, 90%);
+$nst-warning-bg-color: mix(#fff, $nst-warning-color, 90%);
+$nst-success-bg-color: mix(#fff, $nst-success-color, 90%);
+$nst-dark-bg-color: mix(#fff, $nst-dark-color, 90%);
+$nst-info-bg-color: mix(#fff, $nst-info-color, 90%);
+
+// add shade and tint
+$nst-primary-color-shade: mix(#000, $nst-primary-color, 12%);
+$nst-primary-color-tint: mix(#fff, $nst-primary-color, 10%);
+$nst-secondary-color-shade: mix(#000, $nst-secondary-color, 12%);
+$nst-secondary-color-tint: mix(#fff, $nst-secondary-color, 10%);
+$nst-tertiary-color-shade: mix(#000, $nst-tertiary-color, 12%);
+$nst-tertiary-color-tint: mix(#fff, $nst-tertiary-color, 10%);
+$nst-success-color-shade: mix(#000, $nst-success-color, 12%);
+$nst-success-color-tint: mix(#fff, $nst-success-color, 10%);
+$nst-warning-color-shade: mix(#000, $nst-warning-color, 12%);
+$nst-warning-color-tint: mix(#fff, $nst-warning-color, 10%);
+$nst-danger-color-shade: mix(#000, $nst-danger-color, 12%);
+$nst-danger-color-tint: mix(#fff, $nst-danger-color, 10%);
+$nst-dark-color-shade: mix(#000, $nst-dark-color, 12%);
+$nst-dark-color-tint: mix(#fff, $nst-dark-color, 10%);
+$nst-info-color-shade: mix(#000, $nst-info-color, 12%);
+$nst-info-color-tint: mix(#fff, $nst-info-color, 10%);

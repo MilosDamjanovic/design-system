@@ -1,0 +1,9 @@
+@import './colors.scss';
+
+@function nst-get-statuses() {
+  @return 'info', 'warning', 'danger', 'success', 'neutral';
+}
+
+@function nst-get-sizes() {
+  @return 'large', 'medium', 'small';
+}

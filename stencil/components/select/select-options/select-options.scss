@@ -1,0 +1,195 @@
+@import '../../../../public/style/colors';
+@import '../../../../public/style/spacings';
+@import '../../../../public/style/shapes';
+@import '../../../../public/style/borders';
+@import '../../../../public/style/mixins';
+
+.options-menu.inline {
+  &.size-small {
+    .option-item {
+      padding: $nst-space-1x $nst-space-1x-and-half $nst-space-1x $nst-space-1x;
+    }
+  }
+  .option-item {
+    padding: $nst-space-1x $nst-space-2x $nst-space-1x $nst-space-1x;
+  }
+  .options-menu {
+    .search-box {
+      .search-input {
+        padding: $nst-space-1x;
+      }
+    }
+  }
+}
+
+.options-menu.size-small {
+  padding: $nst-space-1x 0 $nst-space-1x-and-half;
+  .options-scrollable-menu {
+    max-height: 212px - ($nst-space-1x + $nst-space-1x-and-half);
+    .option-item {
+      min-height: 16px;
+      .label {
+        line-height: 16px;
+      }
+    }
+  }
+  .search-box {
+    .search-input {
+      padding: $nst-space-1x $nst-space-2x;
+    }
+  }
+}
+.options-menu.inline {
+  .search-box {
+    .search-input {
+      padding: $nst-space-1x;
+    }
+  }
+}
+.options-menu {
+  background-color: $nst-white;
+  z-index: 10000;
+  display: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05), 0px 12px 16px -4px rgba(35, 33, 35, 0.1),
+    0px -4px 6px -2px rgba(35, 33, 35, 0.05);
+  border-radius: $nst-border-radius-xs;
+  min-height: 50px;
+  padding: $nst-space-1x 0 $nst-space-2x;
+  @include user-select(none);
+  &[data-show] {
+    display: block;
+  }
+  padding: $nst-space-1x 0 $nst-space-2x;
+  .options-scrollable-menu {
+    max-height: 264px - ($nst-space-1x + $nst-space-2x);
+    overflow: auto;
+    overflow: overlay;
+    .mobile-header {
+      display: none;
+      position: relative;
+      text-align: center;
+      color: $nst-grey-700;
+      margin: ($nst-space-4x + $nst-space-1x) $nst-space-3x $nst-space-3x $nst-space-3x;
+      .back-icon {
+        position: absolute;
+        left: 0;
+        font-size: 24px;
+      }
+      .header-label {
+        padding-left: 0 $nst-space-3x;
+        font-size: 14px;
+        line-height: 24px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+      }
+    }
+  }
+  .search-box {
+    border-bottom: $nst-border-s solid $nst-grey-100;
+    position: relative;
+    height: 40px;
+    .search-icon {
+      display: none;
+    }
+    .search-input {
+      left: 0;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      box-sizing: border-box;
+      padding: $nst-space-1x $nst-space-2x;
+      outline: none;
+      border: none;
+      min-height: 24px;
+      height: 40px;
+      font-size: 14px;
+      @include placeholder-color($nst-grey-500);
+      &:hover {
+        background-color: $nst-grey-100;
+        .search-input {
+          background-color: $nst-grey-100;
+        }
+      }
+      &:focus,
+      &:active {
+        background-color: $nst-white;
+        .search-input {
+          background-color: $nst-white;
+        }
+      }
+    }
+  }
+}
+
+ion-app {
+  .options-menu {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 100%;
+
+    // to override css addded directly on html element by popper
+    transform: none !important;
+    position: fixed !important;
+    padding: 0 !important;
+    width: 100% !important;
+    .option-item {
+      padding: $nst-space-1x $nst-space-3x;
+    }
+    &.size-small {
+      .search-box {
+        .search-input {
+          padding: 0 $nst-space-2x 0 ($nst-space-4x + $nst-space-1x);
+        }
+      }
+    }
+    .options-scrollable-menu {
+      max-height: 100% !important;
+      .mobile-header {
+        display: block;
+      }
+    }
+    .search-box {
+      padding: 0 $nst-space-3x $nst-space-2x $nst-space-3x;
+      position: relative;
+      height: 40px;
+      margin-bottom: $nst-space-3x;
+      border-bottom: none;
+      .search-input {
+        width: 100%;
+        box-sizing: border-box;
+        height: 48px;
+        font-size: 14px;
+        background-color: $nst-grey-100;
+        position: relative;
+        border: $nst-border-s solid $nst-grey-100;
+        border-radius: $nst-border-radius-xs;
+        padding: 0 $nst-space-2x 0 ($nst-space-4x + $nst-space-1x);
+        outline: none;
+        @include placeholder-color($nst-grey-500);
+        &:active,
+        &:focus {
+          background-color: $nst-white;
+          border: $nst-border-s solid $nst-blue-300;
+          @include nst-outline(4px, $nst-blue-100);
+        }
+      }
+      .search-icon {
+        position: absolute;
+        pointer-events: none;
+        left: 40px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        font-size: 16px;
+        color: $nst-grey-700;
+      }
+    }
+  }
+}

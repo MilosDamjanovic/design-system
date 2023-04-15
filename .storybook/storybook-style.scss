@@ -1,0 +1,42 @@
+@import '../public/global-style/style';
+@import '../public/style/spacings';
+@import '../public/style/colors';
+@import '../public/global-style/tooltip.scss';
+
+h1 {
+  margin-bottom: $nst-space-3x;
+}
+
+h4 {
+  margin: $nst-space-1x 0;
+}
+
+.color-el {
+  padding: $nst-space-4x;
+  border-radius: 5px;
+  margin: $nst-space-2x;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: $nst-grey-400;
+  margin: $nst-space-2x 0;
+}
+table {
+  margin: $nst-space-2x 0;
+  td {
+    padding: $nst-space-1x $nst-space-2x;
+  }
+}
+
+nst-telephone-input.nst-form-input,
+nst-input.nst-form-input,
+nst-textarea.nst-form-input,
+nst-select.nst-form-input,
+nst-split-form-input.nst-form-input {
+  @include excludeDevice(mobile) {
+    width: 50%;
+  }
+}

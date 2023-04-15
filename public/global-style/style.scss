@@ -1,0 +1,164 @@
+@import '../style/colors';
+@import '../style/fonts';
+@import '../style/mixins';
+@import '../style/spacings';
+@import './tooltip.scss';
+@import './modals.scss';
+@import './forms.scss';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+b {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+body {
+  font-family: $nst-font-regular, Helvetica, Arial, sans-serif;
+  color: $nst-grey-700;
+  font-size: 16px;
+}
+
+::-webkit-input-placeholder {
+  font-family: $nst-font-regular, helvetica, arial, sans-serif;
+}
+:-moz-placeholder {
+  font-family: $nst-font-regular, helvetica, arial, sans-serif;
+}
+::-moz-placeholder {
+  font-family: $nst-font-regular, helvetica, arial, sans-serif;
+}
+:-ms-input-placeholder {
+  font-family: $nst-font-regular, helvetica, arial, sans-serif;
+}
+
+h1 {
+  font-family: $nst-font-semibold, Helvetica, Arial, sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: bold;
+  @include onlyDevice(mobile) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+h2 {
+  font-family: $nst-font-semibold, Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  line-height: 36px;
+  @include onlyDevice(mobile) {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-family: $nst-font-semibold, Helvetica, Arial, sans-serif;
+  @include onlyDevice(mobile) {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+
+h4 {
+  font-family: $nst-font-semibold, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  @include onlyDevice(mobile) {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+h5 {
+  font-size: 16px;
+  font-family: $nst-font-semibold, Helvetica, Arial, sans-serif;
+  @include onlyDevice(mobile) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+h6 {
+  font-family: $nst-font-semibold, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  @include onlyDevice(mobile) {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+p,
+.text-regular {
+  font-family: $nst-font-regular, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  @include onlyDevice(mobile) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+small,
+.small {
+  font-family: $nst-font-regular, Helvetica, Arial, sans-serif;
+  color: $nst-grey-500;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+b,
+strong .bold {
+  font-family: $nst-font-semibold, Helvetica, Arial, sans-serif;
+}
+
+a,
+.link {
+  font-family: $nst-font-regular, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  color: $nst-blue-500;
+  text-decoration: none;
+  &:hover {
+    text-decoration-line: underline;
+  }
+  &:visited {
+    color: $nst-blue-300;
+  }
+}
+.theme-text-color-danger {
+  color: $nst-red-600;
+}
+
+.heading-with-back-btn {
+  display: flex;
+  align-items: center;
+}
+// disable underline hover for mat tabs
+.mat-tab-list {
+  a:hover {
+    text-decoration-line: none;
+  }
+}
+
+.subtitle {
+  font-family: $nst-font-semibold;
+  font-size: 16px;
+  line-height: 26px;
+  padding: $nst-space-3x 0;
+  &-centered {
+    text-align: center;
+  }
+}
